@@ -7,6 +7,7 @@ import { AlertController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   title = "Grocery List";
@@ -30,6 +31,7 @@ export class HomePage {
 
   }
 
+  // Remove an item
   removeItem(item, index) {
     console.log("Removing item - ", item, index);
     const toast = this.ToastCtrl.create({
@@ -41,12 +43,13 @@ export class HomePage {
     this.items.splice(index, 1)
   }
 
-
+// Adding Item function
   addItem() {
     console.log("Adding item");
     this.showAddItemPrompt();
   }
 
+  // This creates a prompt that allows the user to add an item
   showAddItemPrompt() {
     const prompt = this.alertCtrl.create({
       title: 'Add Item',
